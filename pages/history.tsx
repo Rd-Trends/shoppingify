@@ -1,0 +1,17 @@
+import DashboardLayout from "../Layouts/Index";
+import ShoppingList from "../components/history/ShoppingList";
+
+const History = () => {
+  return (
+    <DashboardLayout>
+      <main className="py-4 md:py-8 px-4 md:px-8 lg:px-12">
+        <h1 className="text-2xl md:text-2xl text-font-color font-bold mb-8">
+          Shopping history
+        </h1>
+        <ShoppingList />
+      </main>
+    </DashboardLayout>
+  );
+};
+
+export default History;
