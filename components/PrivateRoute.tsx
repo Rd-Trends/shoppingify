@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import useUser from "../hooks/useUser";
+import Loader from "./Loader";
+import Image from "next/image";
 // import Loader from "./Loader";
 
 interface props {
@@ -21,7 +23,17 @@ const PrivatRoute = ({ protectedRoutes, children }: props) => {
   }, [user, isLoading, router, pathIsProtected]);
 
   if (isLoading && !user && pathIsProtected) {
-    return <h1>loading</h1>;
+    return (
+      <div className="flex flex-col items-center justify-center h-screen w-full">
+        <div className="flex items-center space-x-4 mb-2">
+          <Image src="/assets/logo.svg" alt="" width={40} height={40} />
+          <span className="text-yellow text-3xl font-bold">Shoppingify</span>
+        </div>
+        <div className="h-[100px]">
+          <Loader />
+        </div>
+      </div>
+    );
   }
 
   return <>{pathIsProtected ? user && children : children} </>;

@@ -1,11 +1,11 @@
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 
 interface BtnProps {
   tag?: React.ElementType;
   size: "sm" | "md" | "lg";
   children: React.ReactNode;
-  color: "primary" | "secondary" | "danger" | "default";
+  color: string;
   className: string;
   width?: string;
   loading: boolean;
@@ -28,8 +28,8 @@ const Button = React.forwardRef(
   ) => {
     let Tag = tag ? tag : "button";
 
-    const btnClassName = classNames(
-      `flex items-center justify-center border-2 border-transparent outline-none disabled:opacity-70 disabled:cursor-not-allowed ${className}`,
+    const btnClassName = clsx(
+      `flex items-center justify-center border-2 border-transparent outline-none disabled:opacity-70 disabled:cursor-not-allowed`,
       {
         "text-sm py-3 px-6 rounded-md": size === "md",
         " text-[10px] p-2 py-1 rounded-sm": size === "sm",
@@ -38,9 +38,12 @@ const Button = React.forwardRef(
         "bg-red text-white": color === "danger",
         "bg-cyan text-white": color === "secondary",
         "bg-white": color === "default",
+        "bg-transparent border-[1px] border-slate-300":
+          color === "outline-grey",
         "w-full": width === "full",
         "disabled:opacity-70 cursor-not-allowed": loading,
-      }
+      },
+      className
     );
 
     return (

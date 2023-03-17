@@ -1,30 +1,16 @@
-import React, { useEffect, useMemo } from "react";
-import useSWR from "swr";
+import React, { useMemo } from "react";
 import dayjs from "dayjs";
 import useCategories from "../../hooks/useCategories";
-import { useSetAtom } from "jotai";
-import { shoppingListAtom } from "../../store";
-import { useRouter } from "next/router";
 import { shoppingList, shoppingListItem } from "../../interface";
 import { BsCalendar2Event } from "react-icons/bs";
 import Item from "./Item";
 
-const ShoppingList = () => {
-  const setShoppingList = useSetAtom(shoppingListAtom);
+const ShoppingList = ({
+  shoppingList,
+}: {
+  shoppingList: shoppingList | undefined;
+}) => {
   const { categories } = useCategories();
-  const router = useRouter();
-
-  const { data: shoppingList } = useSWR<shoppingList>(
-    router.query.id ? `/api/shopping-lists/${router.query.id}` : null,
-    null,
-    { suspense: true }
-  );
-
-  useEffect(() => {
-    if (shoppingList) {
-      setShoppingList(shoppingList);
-    }
-  }, [shoppingList]);
 
   const formattedItems = useMemo(() => {
     return categories?.map((category) => {

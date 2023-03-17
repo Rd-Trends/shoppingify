@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { MdModeEdit } from "react-icons/md";
 import Button from "../../components/Button";
+import Loader from "../../components/Loader";
 import CancelShoopingListModal from "../../components/sidebarShoppingList/CancelListModal";
 import ShoppingListItemList from "../../components/sidebarShoppingList/ShoppingListItemList";
 import { shoppingListItem, shoppingListStatus } from "../../interface";
@@ -39,6 +40,23 @@ const ShoppingList = () => {
       },
     })
       .then((res) => res.json())
+      .then(() => router.push("/history"))
+      .catch((err) => {
+        throw err;
+      });
+    return;
+  };
+
+  const completeShoppingList = async () => {
+    await fetch(`/api/shopping-lists/${shoppingList?._id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ status: shoppingListStatus.completed }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then(() => router.push("/history"))
       .catch((err) => {
         throw err;
       });
@@ -82,10 +100,10 @@ const ShoppingList = () => {
           />
         </div>
       ) : (
-        <div>Loading</div>
+        <Loader />
       )}
 
-      <div className="bg-white sticky z-[1] bottom-0 flex items-center space-x-4 justify-center h-[12rem] px-8">
+      <div className="bg-white sticky z-[1] bottom-0 flex items-center space-x-4 justify-center h-[12rem] px-8 ">
         <button
           className=" font-semibold hover:font-bold"
           onClick={(e) => {
@@ -95,7 +113,10 @@ const ShoppingList = () => {
         >
           cancel
         </button>
-        <button className="bg-cyan text-white border-2 border-transparent rounded-xl py-2 px-4">
+        <button
+          className="bg-cyan text-white border-2 border-cyan rounded-xl py-2 px-4 hover:bg-transparent hover:text-cyan"
+          onClick={completeShoppingList}
+        >
           Complete
         </button>
       </div>

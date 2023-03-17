@@ -6,6 +6,7 @@ import { MdOutlineAnalytics, MdOutlineShoppingCart } from "react-icons/md";
 import { useRouter } from "next/router";
 import { useAtom, useAtomValue } from "jotai";
 import { createShoppingListAtom, isSideBarOpenAtom } from "../store";
+import Tooltip from "../components/Tooltip";
 
 const Nav = () => {
   const router = useRouter();
@@ -34,9 +35,10 @@ const Nav = () => {
           href="/"
           className={`w-[3.5rem] md:w-20 border-4 border-transparent ${
             router.asPath === "/" ? "border-l-yellow" : "border-transparent"
-          } py-2 `}
+          } py-2 relative`}
         >
           <AiOutlineBars size={20} color="#454545" className="mx-auto block" />
+          <Tooltip text="items" />
         </Link>
         <Link
           href="/history"
@@ -44,13 +46,14 @@ const Nav = () => {
             router.asPath === "/history"
               ? "border-l-yellow"
               : "border-transparent"
-          } py-2 `}
+          } py-2 relative`}
         >
           <AiOutlineReload
             size={20}
             color="#454545"
             className="mx-auto block"
           />
+          <Tooltip text="history" />
         </Link>
         <Link
           href="/statistics"
@@ -58,13 +61,14 @@ const Nav = () => {
             router.asPath === "/statistics"
               ? "border-l-yellow"
               : "border-transparent"
-          } py-2 `}
+          } py-2 relative`}
         >
           <MdOutlineAnalytics
             size={20}
             color="#454545"
             className="mx-auto block"
           />
+          <Tooltip text="statistics" />
         </Link>
       </div>
 

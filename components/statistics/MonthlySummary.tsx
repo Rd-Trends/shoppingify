@@ -53,22 +53,14 @@ const MonthlySummary = ({ shoppingLists }: props) => {
 
   console.log(formattedShoppingLists);
 
-  const data = [
-    { date: "May", items: 100 },
-    { date: "March", items: 200 },
-    { date: "April", items: 20 },
-    { date: "June", items: 75 },
-    { date: "July", items: 184 },
-  ];
-
   return (
     <div>
       <h2 className="mb-8 text-2xl font-medium">Monthly Summary</h2>
 
-    <div className=" w-full h-[320px]">
+      <div className=" w-full h-[320px]">
         <ResponsiveContainer width={"100%"} height={"100%"}>
           <LineChart
-            data={data}
+            data={formattedShoppingLists}
             width={800}
             height={300}
             margin={{ right: 5, left: -30, top: 5, bottom: 5 }}

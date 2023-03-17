@@ -12,15 +12,15 @@ const TopCategories = ({ shoppingLists }: props) => {
   const [totalItems, setTotalItems] = useState(0);
 
   const topItems = useMemo(() => {
-    let curr = new Map<string, number>();
+    let categoryCounter = new Map<string, number>();
     shoppingLists?.map((shoppingList) => {
       shoppingList.items.map((list) => {
-        curr.has(list.item.category)
-          ? curr.set(list.item.category, curr.get(list.item.category)! + 1)
-          : curr.set(list.item.category, 1);
+        categoryCounter.has(list.item.category)
+          ? categoryCounter.set(list.item.category, categoryCounter.get(list.item.category)! + 1)
+          : categoryCounter.set(list.item.category, 1);
       });
     });
-    const categories = Array.from(curr, ([id, quantity]) => ({
+    const categories = Array.from(categoryCounter, ([id, quantity]) => ({
       id,
       quantity,
     }))

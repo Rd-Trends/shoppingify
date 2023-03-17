@@ -1,3 +1,4 @@
+import Head from "next/head";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Quicksand } from "@next/font/google";
@@ -15,9 +16,18 @@ const quickSand = Quicksand({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${quickSand.variable} font-sans`}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/assets/logo.svg" />
+      </Head>
       <SWRConfig value={{ fetcher }}>
         <PrivateRoute
-          protectedRoutes={["/history", "/statistics", "/shopping-lists/[id]"]}
+          protectedRoutes={[
+            "/",
+            "/history",
+            "/statistics",
+            "/shopping-lists/[id]",
+          ]}
         >
           <Component {...pageProps} />
         </PrivateRoute>

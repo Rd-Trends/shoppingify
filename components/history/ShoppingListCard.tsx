@@ -2,7 +2,7 @@ import React from "react";
 import { shoppingList } from "../../interface";
 import dayjs from "dayjs";
 import { BsCalendar2Event, BsChevronRight } from "react-icons/bs";
-import classNames from "classnames";
+import clsx from "clsx";
 import Link from "next/link";
 
 interface props {
@@ -10,7 +10,7 @@ interface props {
 }
 
 const ShoppingListCard = ({ shoppingList }: props) => {
-  const statusClassname = classNames(
+  const statusClassname = clsx(
     "py-[2px] px-2 text-sm rounded-lg border font-medium",
     {
       "text-yellow border-yellow": shoppingList.status === "active",
