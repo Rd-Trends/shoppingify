@@ -8,34 +8,34 @@
   box-sizing: border-box;
 }
 
-@later components {
- .checkbox {
-  @apply absolute  cursor-pointer h-0 w-0;
-}
+@layer components {
+  .checkbox {
+    @apply absolute  cursor-pointer h-0 w-0;
+  }
 
-.checkmark {
-  @apply absolute top-0 left-0 h-6 w-6 bg-transparent border-[2px] rounded-md border-yellow cursor-pointer;
-}
+  .checkmark {
+    @apply absolute top-0 left-0 h-6 w-6 bg-transparent border-[2px] rounded-md border-yellow cursor-pointer;
+  }
 
-.checkmark::after {
-  @apply content-[""] absolute hidden left-[6px] top-0 w-2 h-4 [border-width:0px_2px_2px_0px] border-yellow rotate-45;
-}
+  .checkmark::after {
+    @apply content-[""] absolute hidden left-[6px] top-0 w-2 h-4 [border-width:0px_2px_2px_0px] border-yellow rotate-45;
+  }
 
-.checkbox:checked ~ .checkmark::after {
-  @apply block;
-}
+  .checkbox:checked ~ .checkmark::after {
+    @apply block;
+  }
 
-.tooltip {
-  @apply absolute invisible opacity-0 transition-opacity duration-1000 top-1/2 -translate-y-1/2 text-white z-[1] bg-[#454545] text-xs rounded py-1 px-3 left-full;
-}
+  .tooltip {
+    @apply absolute invisible opacity-0 transition-opacity duration-1000 top-1/2 -translate-y-1/2 text-white z-[1] bg-[#454545] text-xs rounded py-1 px-3 left-full;
+  }
 
-.tooltip::after {
-  @apply content-[""] absolute top-1/2 -translate-y-1/2 right-full border-[5px] border-transparent border-r-[#454545];
-}
+  .tooltip::after {
+    @apply content-[""] absolute top-1/2 -translate-y-1/2 right-full border-[5px] border-transparent border-r-[#454545];
+  }
 
-*:hover > .tooltip {
-  @apply visible opacity-100;
-}
+  *:hover > .tooltip {
+    @apply visible opacity-100;
+  }
 }
 
 .loader-ring {
