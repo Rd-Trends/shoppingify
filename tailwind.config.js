@@ -9,6 +9,18 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",
   ],
+  safelist: [
+    "html",
+    "body",
+    /^border*/,
+    /^w*/,
+    /^text*/,
+    /^h*/,
+    /^rounded*/,
+    /^shadow*/,
+    /^bg/,
+    /^min/,
+  ],
   theme: {
     extend: {
       fontFamily: {
