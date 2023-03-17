@@ -1,4 +1,4 @@
-import "../styles/output.css";
+import "../styles/globals.css";
 
 import { Quicksand } from "@next/font/google";
 import type { AppProps } from "next/app";
