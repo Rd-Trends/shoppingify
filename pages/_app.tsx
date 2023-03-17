@@ -29,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
             "/history",
             "/statistics",
             "/shopping-lists/[id]",
+            "/test",
           ]}
         >
           <Component {...pageProps} />
