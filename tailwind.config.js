@@ -18,10 +18,13 @@ module.exports = {
     { pattern: /^h*/ },
     { pattern: /^rounded*/ },
     { pattern: /^shadow*/ },
-    { pattern: /^bg/ },
-    { pattern: /^min/ },
-    { pattern: /^p/ },
-    { pattern: /^b/ },
+    { pattern: /^bg*/ },
+    { pattern: /^min*/ },
+    { pattern: /^p*/ },
+    { pattern: /^b*/ },
+    { pattern: /^translate*/ },
+    { pattern: /^transition*/ },
+    { pattern: /^duration*/ },
   ],
   theme: {
     extend: {
