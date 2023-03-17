@@ -1,16 +1,17 @@
 import dayjs from "dayjs";
 import React, { useMemo } from "react";
-import { shoppingList } from "../../interface";
 import {
-  LineChart,
+  CartesianGrid,
+  Legend,
   Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
 } from "recharts";
+
+import { shoppingList } from "../../interface";
 
 interface props {
   shoppingLists: shoppingList[] | undefined;

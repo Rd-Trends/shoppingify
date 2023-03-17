@@ -1,8 +1,9 @@
-import { useSetAtom, useAtom } from "jotai";
+import { useAtom,useSetAtom } from "jotai";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import { MdModeEdit } from "react-icons/md";
+
 import Button from "../../components/Button";
 import NewShoppingListItemList from "../../components/sidebarCreateShoppingList/ItemList";
 import { shoppingListStatus } from "../../interface";

@@ -1,4 +1,5 @@
 import { atom } from "jotai";
+
 import { item, shoppingList, shoppingListStatus } from "../interface";
 
 export const isSideBarOpenAtom = atom(false);

@@ -1,5 +1,6 @@
 import { NextApiResponse } from "next";
 import nextConnect from "next-connect";
+
 import { category, NextApiReq, shoppingListStatus } from "../../../interface";
 import auth from "../../../middleware/auth";
 import init from "../../../middleware/init";

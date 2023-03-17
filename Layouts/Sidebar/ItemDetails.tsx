@@ -1,13 +1,14 @@
-import React from "react";
-import { useSetAtom, useAtomValue } from "jotai";
-import { BsArrowLeft } from "react-icons/bs";
-import { itemInItemDetailsAtom, sidebarAtom } from "../../store";
-import Button from "../../components/Button";
+import { useAtomValue,useSetAtom } from "jotai";
 import Image from "next/image";
+import React from "react";
+import { BsArrowLeft } from "react-icons/bs";
+
+import Button from "../../components/Button";
 import useCategories from "../../hooks/useCategories";
 import useItems from "../../hooks/useItems";
 import useShoppingListItems from "../../hooks/useShoppingListItems";
 import { item } from "../../interface";
+import { itemInItemDetailsAtom, sidebarAtom } from "../../store";
 
 const ItemDetails = () => {
   const setSidebar = useSetAtom(sidebarAtom);

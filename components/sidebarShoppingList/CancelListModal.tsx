@@ -1,7 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
+import { Quicksand } from "@next/font/google";
 import { Fragment, useState } from "react";
 import { MdClose } from "react-icons/md";
-import { Quicksand } from "@next/font/google";
+
 import Button from "../Button";
 
 interface props {

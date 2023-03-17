@@ -1,9 +1,11 @@
-import Head from "next/head";
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
+
 import { Quicksand } from "@next/font/google";
-import PrivateRoute from "../components/PrivateRoute";
+import type { AppProps } from "next/app";
+import Head from "next/head";
 import { SWRConfig } from "swr";
+
+import PrivateRoute from "../components/PrivateRoute";
 import { fetcher } from "../utils/fetcher";
 
 const quickSand = Quicksand({

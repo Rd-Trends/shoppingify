@@ -1,8 +1,9 @@
-import React, { useMemo } from "react";
 import dayjs from "dayjs";
+import React, { useMemo } from "react";
+import { BsCalendar2Event } from "react-icons/bs";
+
 import useCategories from "../../hooks/useCategories";
 import { shoppingList, shoppingListItem } from "../../interface";
-import { BsCalendar2Event } from "react-icons/bs";
 import Item from "./Item";
 
 const ShoppingList = ({

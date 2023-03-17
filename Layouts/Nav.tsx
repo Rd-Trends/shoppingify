@@ -1,12 +1,13 @@
-import React from "react";
+import { useAtom, useAtomValue } from "jotai";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
 import { AiOutlineBars, AiOutlineReload } from "react-icons/ai";
 import { MdOutlineAnalytics, MdOutlineShoppingCart } from "react-icons/md";
-import { useRouter } from "next/router";
-import { useAtom, useAtomValue } from "jotai";
-import { createShoppingListAtom, isSideBarOpenAtom } from "../store";
+
 import Tooltip from "../components/Tooltip";
+import { createShoppingListAtom, isSideBarOpenAtom } from "../store";
 
 const Nav = () => {
   const router = useRouter();

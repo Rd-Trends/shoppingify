@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import CreateNewItem from "./CreateNewItem";
-import CreateShoppingList from "./CreateShoppingList";
 import { Transition } from "@headlessui/react";
 import { useAtomValue } from "jotai";
+import React, { useState } from "react";
+
 import { isSideBarOpenAtom, sidebarAtom } from "../../store";
+import CreateNewItem from "./CreateNewItem";
+import CreateShoppingList from "./CreateShoppingList";
 import ItemDetails from "./ItemDetails";
 import ShoppingList from "./ShoppingList";
 

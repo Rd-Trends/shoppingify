@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+
 import useCategories from "../../hooks/useCategories";
 import { shoppingList } from "../../interface";
 import ProgressBar from "./ProgressBar";

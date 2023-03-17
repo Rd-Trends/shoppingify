@@ -1,10 +1,11 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useSetAtom } from "jotai";
 import React, { useState } from "react";
 import { BsDash, BsPlus } from "react-icons/bs";
 import { MdDeleteOutline } from "react-icons/md";
+
 import useShoppingListItems from "../../hooks/useShoppingListItems";
 import { shoppingListItem } from "../../interface";
-import { AnimatePresence, motion } from "framer-motion";
 import { createShoppingListAtom } from "../../store";
 
 const NewShoppingListItem = ({

@@ -1,8 +1,9 @@
+import { useSetAtom } from "jotai";
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import Input from "../Input";
+
 import { itemQueryAtom } from "../../store";
-import { useSetAtom } from "jotai";
+import Input from "../Input";
 
 const Header = () => {
   const setItemQuery = useSetAtom(itemQueryAtom);

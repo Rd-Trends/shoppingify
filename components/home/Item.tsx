@@ -1,13 +1,14 @@
+import { useSetAtom } from "jotai";
 import React from "react";
 import { BsPlus } from "react-icons/bs";
+
+import useShoppingListItems from "../../hooks/useShoppingListItems";
 import { item } from "../../interface";
-import { useSetAtom } from "jotai";
 import {
   isSideBarOpenAtom,
   itemInItemDetailsAtom,
   sidebarAtom,
 } from "../../store";
-import useShoppingListItems from "../../hooks/useShoppingListItems";
 
 const Item = ({ item }: { item: item }) => {
   const setSidebar = useSetAtom(sidebarAtom);

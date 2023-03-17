@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
-import DashboardLayout from "../../Layouts/Index";
-import { BsArrowLeft } from "react-icons/bs";
-import Link from "next/link";
 import { useSetAtom } from "jotai";
-import ShoppingList from "../../components/shoppingLists";
-import { shoppingListAtom, sidebarAtom } from "../../store";
-import { useRouter } from "next/router";
-import useSWR from "swr";
-import { shoppingList } from "../../interface";
-import Loader from "../../components/Loader";
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
+import { BsArrowLeft } from "react-icons/bs";
+import useSWR from "swr";
+
+import Loader from "../../components/Loader";
+import ShoppingList from "../../components/shoppingLists";
+import { shoppingList } from "../../interface";
+import DashboardLayout from "../../Layouts/Index";
+import { shoppingListAtom, sidebarAtom } from "../../store";
 
 const ShoppingListPage = () => {
   const setSidebar = useSetAtom(sidebarAtom);

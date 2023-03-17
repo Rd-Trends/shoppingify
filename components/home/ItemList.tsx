@@ -1,12 +1,12 @@
-import React from "react";
-import { item } from "../../interface";
-import { useMemo } from "react";
-import Item from "./Item";
-import useItems from "../../hooks/useItems";
-import useCategories from "../../hooks/useCategories";
 import { useAtomValue } from "jotai";
+import React, { useMemo } from "react";
+
+import useCategories from "../../hooks/useCategories";
+import useItems from "../../hooks/useItems";
+import { item } from "../../interface";
 import { itemQueryAtom } from "../../store";
 import Loader from "../Loader";
+import Item from "./Item";
 
 const ItemList = () => {
   const { items, isLoading: isItemsLoading } = useItems();

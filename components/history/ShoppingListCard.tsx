@@ -1,9 +1,10 @@
-import React from "react";
-import { shoppingList } from "../../interface";
-import dayjs from "dayjs";
-import { BsCalendar2Event, BsChevronRight } from "react-icons/bs";
 import clsx from "clsx";
+import dayjs from "dayjs";
 import Link from "next/link";
+import React from "react";
+import { BsCalendar2Event, BsChevronRight } from "react-icons/bs";
+
+import { shoppingList } from "../../interface";
 
 interface props {
   shoppingList: shoppingList;

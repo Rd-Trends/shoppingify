@@ -1,5 +1,6 @@
 import { useSetAtom } from "jotai";
 import React, { useMemo } from "react";
+
 import useCategories from "../../hooks/useCategories";
 import { shoppingListItem } from "../../interface";
 import { shoppingListAtom } from "../../store";

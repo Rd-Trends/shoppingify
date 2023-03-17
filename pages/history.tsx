@@ -1,6 +1,7 @@
-import DashboardLayout from "../Layouts/Index";
-import ShoppingList from "../components/history/ShoppingList";
 import Head from "next/head";
+
+import ShoppingList from "../components/history/ShoppingList";
+import DashboardLayout from "../Layouts/Index";
 
 const History = () => {
   return (

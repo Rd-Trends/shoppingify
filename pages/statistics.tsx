@@ -1,11 +1,12 @@
+import Head from "next/head";
 import React from "react";
+
+import Loader from "../components/Loader";
+import MonthlySummary from "../components/statistics/MonthlySummary";
 import TopCategories from "../components/statistics/TopCategories";
 import TopItems from "../components/statistics/TopItems";
-import DashboardLayout from "../Layouts/Index";
 import useShoppingLists from "../hooks/useShoppingLists";
-import MonthlySummary from "../components/statistics/MonthlySummary";
-import Loader from "../components/Loader";
-import Head from "next/head";
+import DashboardLayout from "../Layouts/Index";
 
 const Statistics = () => {
   const { shoppingLists, isLoading } = useShoppingLists();

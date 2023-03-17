@@ -1,16 +1,17 @@
-import React, { useMemo, useState } from "react";
-import Input from "../../components/Input";
-import { useForm, Controller } from "react-hook-form";
 import { Combobox, Transition } from "@headlessui/react";
-import Button from "../../components/Button";
-import { BsChevronBarDown, BsChevronBarUp } from "react-icons/bs";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { item } from "../../interface";
-import { itemSchema } from "../../schema";
+import { useSetAtom } from "jotai";
+import React, { useMemo, useState } from "react";
+import { Controller,useForm } from "react-hook-form";
+import { BsChevronBarDown, BsChevronBarUp } from "react-icons/bs";
+
+import Button from "../../components/Button";
+import Input from "../../components/Input";
 import CreateNewCategory from "../../components/sidebarCreateNewItem/CreateNewCategory";
 import useCategories from "../../hooks/useCategories";
 import useItems from "../../hooks/useItems";
-import { useSetAtom } from "jotai";
+import { item } from "../../interface";
+import { itemSchema } from "../../schema";
 import { sidebarAtom } from "../../store";
 
 const CreateNewItem = () => {

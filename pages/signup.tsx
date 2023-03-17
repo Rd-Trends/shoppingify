@@ -1,17 +1,18 @@
+import { yupResolver } from "@hookform/resolvers/yup";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
+
 import Button from "../components/Button";
 import Input from "../components/Input";
 import useUser from "../hooks/useUser";
 import { signUpData } from "../interface";
 import { signUpSchema } from "../schema";
-import Head from "next/head";
 
 const SignUp = () => {
   const [loading, setLoading] = useState<boolean>(false);
