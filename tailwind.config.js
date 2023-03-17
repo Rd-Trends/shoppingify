@@ -9,23 +9,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",
   ],
-  safelist: [
-    "html",
-    "body",
-    { pattern: /^border*/ },
-    { pattern: /^w*/ },
-    { pattern: /^text*/ },
-    { pattern: /^h*/ },
-    { pattern: /^rounded*/ },
-    { pattern: /^shadow*/ },
-    { pattern: /^bg*/ },
-    { pattern: /^min*/ },
-    { pattern: /^p*/ },
-    { pattern: /^b*/ },
-    { pattern: /^translate*/ },
-    { pattern: /^transition*/ },
-    { pattern: /^[a-z]*/ },
-  ],
   theme: {
     extend: {
       fontFamily: {
