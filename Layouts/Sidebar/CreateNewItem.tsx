@@ -124,7 +124,7 @@ const CreateNewItem = () => {
                           <Combobox.Option
                             key={category._id}
                             value={category._id}
-                            className="py-3 px-4 rounded-md ui-active:bg-bg-body "
+                            className="py-3 px-4 rounded-md ui-active:bg-body_bg "
                           >
                             {category.name}
                           </Combobox.Option>

@@ -30,14 +30,14 @@ const Input = React.forwardRef(
         {showLabel ? (
           <label
             htmlFor={id}
-            className="block text-font-color text-sm font-medium mb-1"
+            className="block text-font_color text-sm font-medium mb-1"
           >
             {label}
           </label>
         ) : null}
         <Tag
           {...restProps}
-          className={` border border-[#BDBDBD] rounded-md py-2 px-4 text-font-color bg-transparent w-full placeholder:text-[#BDBDBD] outline-none ${
+          className={` border border-[#BDBDBD] rounded-md py-2 px-4 text-font_color bg-transparent w-full placeholder:text-[#BDBDBD] outline-none ${
             className ? className : ""
           }`}
           ref={ref}

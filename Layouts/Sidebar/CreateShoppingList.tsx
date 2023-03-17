@@ -35,7 +35,7 @@ const CreateShoppingList = () => {
 
   const setSidebar = useSetAtom(sidebarAtom);
   return (
-    <div className="bg-light-purple h-screen pt-8 flex flex-col relative ">
+    <div className="bg-light_purple h-screen pt-8 flex flex-col relative ">
       <div className=" bg-purple rounded-3xl flex items-start py-4 space-x-8 mx-8">
         <Image
           src={Source}
@@ -57,7 +57,7 @@ const CreateShoppingList = () => {
       {shoppingList.items.length ? (
         <div className=" h-full overflow-y-auto mt-8 py-4 px-8 flex flex-col space-y-4">
           <div className="flex justify-between space-x-8 items-start">
-            <p className=" text-xl font-bold text-font-color">
+            <p className=" text-xl font-bold text-font_color">
               {shoppingList.name}
             </p>
             <button className="pt-2">

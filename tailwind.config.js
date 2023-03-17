@@ -13,14 +13,14 @@ module.exports = {
         sans: ["var(--font-quicksand)", ...fontFamily.sans],
       },
       colors: {
-        "font-color": "#34333A",
+        font_color: "#34333A",
         yellow: "#F9A109",
         purple: "#80485B",
-        "light-purple": "#FFF0DE",
+        light_purple: "#FFF0DE",
         red: "#EB5757",
         cyan: "#56CCF2",
-        "bg-body": "#FAFAFE",
-        "grey": "#C1C1C4"
+        body_bg: "#FAFAFE",
+        grey: "#C1C1C4",
       },
     },
   },

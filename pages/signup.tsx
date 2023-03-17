@@ -62,7 +62,7 @@ const SignUp = () => {
       <Head>
         <title>Register an account - Shoppingify</title>
       </Head>
-      <section className=" flex flex-col items-center justify-center min-h-screen text-[#454545] bg-white md:bg-bg-body">
+      <section className=" flex flex-col items-center justify-center min-h-screen text-[#454545] bg-white md:bg-body_bg">
         <div className="bg-white md:shadow-2xl px-4 py-4 md:px-8 md:py-8 rounded-lg flex flex-col items-center w-full md:w-[450px]">
           <div className="flex flex-col items-center space-y-1">
             <Image src="/assets/logo.svg" alt="" width={40} height={40} />

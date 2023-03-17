@@ -49,7 +49,7 @@ const ItemDetails = () => {
 
         <div>
           <p className="text-grey font-medium mb-2 text-xs">Name</p>
-          <p className=" text-font-color font-medium text-2xl">{item?.name}</p>
+          <p className=" text-font_color font-medium text-2xl">{item?.name}</p>
         </div>
 
         <div>
