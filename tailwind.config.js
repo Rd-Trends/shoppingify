@@ -24,7 +24,7 @@ module.exports = {
     { pattern: /^b*/ },
     { pattern: /^translate*/ },
     { pattern: /^transition*/ },
-    { pattern: /^duration*/ },
+    { pattern: /^[a-z]*/ },
   ],
   theme: {
     extend: {
