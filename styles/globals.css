@@ -697,11 +697,6 @@ video {
   margin-right: 2rem !important;
 }
 
-.my-12 {
-  margin-top: 3rem !important;
-  margin-bottom: 3rem !important;
-}
-
 .mb-8 {
   margin-bottom: 2rem !important;
 }
@@ -764,6 +759,10 @@ video {
 
 .mb-2 {
   margin-bottom: 0.5rem !important;
+}
+
+.mt-12 {
+  margin-top: 3rem !important;
 }
 
 .mr-\[24px\] {
@@ -903,16 +902,6 @@ video {
 
 .translate-x-\[100\%\] {
   --tw-translate-x: 100% !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-}
-
-.-translate-x-\[-100\%\] {
-  --tw-translate-x: 100% !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-}
-
-.translate-x-0 {
-  --tw-translate-x: 0px !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 
@@ -1653,11 +1642,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:my-16 {
-    margin-top: 4rem !important;
-    margin-bottom: 4rem !important;
-  }
-
   .md\:mb-16 {
     margin-bottom: 4rem !important;
   }

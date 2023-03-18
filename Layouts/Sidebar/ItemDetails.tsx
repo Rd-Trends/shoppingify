@@ -1,7 +1,7 @@
 import { useAtomValue, useSetAtom } from "jotai";
-import Image from "next/image";
 import React from "react";
 import { BsArrowLeft } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 import Button from "../../components/Button";
 import useCategories from "../../hooks/useCategories";
@@ -9,6 +9,7 @@ import useItems from "../../hooks/useItems";
 import useShoppingListItems from "../../hooks/useShoppingListItems";
 import { item } from "../../interface";
 import { itemInItemDetailsAtom, sidebarAtom } from "../../store";
+import { SidebarAnimation } from "../../utils/variants";
 
 const ItemDetails = () => {
   const setSidebar = useSetAtom(sidebarAtom);
@@ -29,7 +30,11 @@ const ItemDetails = () => {
   };
 
   return (
-    <div className="py-8 bg-white px-4 flex flex-col justify-between h-screen md:px-8">
+    <motion.div
+      variants={SidebarAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit" className="py-8 bg-white px-4 flex flex-col justify-between h-screen overflow-y-auto md:px-8">
       <div className="[&>*:not(:last-child)]:mb-8">
         <button
           className="bg-transparent flex items-center text-yellow"
@@ -69,7 +74,7 @@ const ItemDetails = () => {
         ) : null}
       </div>
 
-      <div className="w-full flex items-center justify-center my-12 md:my-16 space-x-8">
+      <div className="w-full flex items-center justify-center mt-12 space-x-8">
         <button className=" font-semibold hover:font-bold " onClick={deleItem}>
           delete
         </button>
@@ -86,7 +91,7 @@ const ItemDetails = () => {
           Add to List
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

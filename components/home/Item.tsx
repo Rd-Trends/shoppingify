@@ -1,6 +1,7 @@
 import { useSetAtom } from "jotai";
 import React from "react";
 import { BsPlus } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 import useShoppingListItems from "../../hooks/useShoppingListItems";
 import { item } from "../../interface";
@@ -17,7 +18,8 @@ const Item = ({ item }: { item: item }) => {
   const { addItemToShoppingList } = useShoppingListItems();
 
   return (
-    <div
+    <motion.div
+      whileTap={{ scale: 1.1 }}
       onClick={() => {
         setSidebar("ItemDetails");
         setItemInItemDetails(item);
@@ -36,7 +38,7 @@ const Item = ({ item }: { item: item }) => {
       >
         <BsPlus size={30} />
       </button>
-    </div>
+    </motion.div>
   );
 };
 

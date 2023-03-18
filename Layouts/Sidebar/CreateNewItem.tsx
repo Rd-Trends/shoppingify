@@ -2,7 +2,7 @@ import { Combobox, Transition } from "@headlessui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useSetAtom } from "jotai";
 import React, { useMemo, useState } from "react";
-import { Controller,useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { BsChevronBarDown, BsChevronBarUp } from "react-icons/bs";
 
 import Button from "../../components/Button";
@@ -13,6 +13,8 @@ import useItems from "../../hooks/useItems";
 import { item } from "../../interface";
 import { itemSchema } from "../../schema";
 import { sidebarAtom } from "../../store";
+import { motion } from "framer-motion";
+import { SidebarAnimation } from "../../utils/variants";
 
 const CreateNewItem = () => {
   const [query, setQuery] = useState("");
@@ -52,7 +54,13 @@ const CreateNewItem = () => {
   });
 
   return (
-    <div className="py-8 px-4 h-screen bg-white lg:bg-transparent overflow-y-auto">
+    <motion.div
+      variants={SidebarAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="py-8 px-4 h-screen bg-white lg:bg-transparent overflow-y-auto"
+    >
       <h1 className=" text-xl font-medium mb-8">Add a new item</h1>
       <form onSubmit={createItem} className="flex flex-col justify-between">
         <div>
@@ -162,7 +170,7 @@ const CreateNewItem = () => {
           <Button>Save</Button>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

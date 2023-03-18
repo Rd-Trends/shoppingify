@@ -1,8 +1,9 @@
-import { useAtomValue,useSetAtom } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { MdModeEdit } from "react-icons/md";
+import { motion } from "framer-motion";
 
 import Button from "../../components/Button";
 import Loader from "../../components/Loader";
@@ -11,6 +12,7 @@ import ShoppingListItemList from "../../components/sidebarShoppingList/ShoppingL
 import { shoppingListItem, shoppingListStatus } from "../../interface";
 import Source from "../../public/assets/source.svg";
 import { shoppingListAtom, sidebarAtom } from "../../store";
+import { SidebarAnimation } from "../../utils/variants";
 
 const ShoppingList = () => {
   const shoppingList = useAtomValue(shoppingListAtom);
@@ -66,7 +68,13 @@ const ShoppingList = () => {
 
   const setSidebar = useSetAtom(sidebarAtom);
   return (
-    <div className="bg-light_purple h-screen pt-8 flex flex-col relative ">
+    <motion.div
+      variants={SidebarAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="bg-light_purple h-screen pt-8 flex flex-col relative "
+    >
       <div className=" bg-purple rounded-3xl flex items-start py-4 space-x-8 mx-8">
         <Image
           src={Source}
@@ -127,7 +135,7 @@ const ShoppingList = () => {
         closeModal={() => setIsModalOpen(false)}
         cancelShoppingList={cancelShoppingList}
       />
-    </div>
+    </motion.div>
   );
 };
 
