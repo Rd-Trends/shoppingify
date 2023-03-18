@@ -27,7 +27,7 @@ const Item = ({ item }: { item: item }) => {
     >
       <p className=" capitalize font-medium">{item.name}</p>
       <button
-        className="outline-none bg-transparent border-none text-grey hover:text-yellow "
+        className="outline-none bg-transparent border-none -mt-[3px] text-grey hover:text-yellow "
         onClick={(e) => {
           e.stopPropagation();
           addItemToShoppingList({ item, quantity: 1, bought: false });

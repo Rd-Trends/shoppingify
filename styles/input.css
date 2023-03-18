@@ -26,7 +26,7 @@
   }
 
   .tooltip {
-    @apply absolute invisible opacity-0 transition-opacity duration-1000 top-1/2 -translate-y-1/2 text-white z-[1] bg-[#454545] text-xs rounded py-1 px-3 left-full;
+    @apply absolute hidden opacity-0 transition-opacity duration-1000 top-1/2 -translate-y-1/2 text-white z-[1] bg-[#454545] text-xs rounded py-1 px-3 left-full;
   }
 
   .tooltip::after {
@@ -34,7 +34,7 @@
   }
 
   *:hover > .tooltip {
-    @apply visible opacity-100;
+    @apply inline-block opacity-100;
   }
 }
 

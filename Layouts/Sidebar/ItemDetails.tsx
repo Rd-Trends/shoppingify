@@ -1,4 +1,4 @@
-import { useAtomValue,useSetAtom } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import Image from "next/image";
 import React from "react";
 import { BsArrowLeft } from "react-icons/bs";
@@ -39,13 +39,7 @@ const ItemDetails = () => {
         </button>
 
         {item?.image ? (
-          <Image
-            src={item.image}
-            alt=""
-            width={50}
-            height={50}
-            className=" w-full rounded-2xl "
-          />
+          <img src={item.image} alt="" className=" w-full object-center object-cover aspect-square max-h-80 rounded-2xl " />
         ) : null}
 
         <div>
@@ -64,9 +58,9 @@ const ItemDetails = () => {
         </div>
 
         {item?.note ? (
-          <div className="text-grey font-medium mb-2 text-xs">
-            <p className=" ">Note</p>
-            <p>{item.note}</p>
+          <div className="">
+            <p className="text-grey font-medium mb-2 text-xs ">Note</p>
+            <p className="font-medium">{item.note}</p>
           </div>
         ) : null}
       </div>
