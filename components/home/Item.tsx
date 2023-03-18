@@ -32,7 +32,6 @@ const Item = ({ item }: { item: item }) => {
           e.stopPropagation();
           addItemToShoppingList({ item, quantity: 1, bought: false });
           setSidebar("CreateShoppingList");
-          setIsSidebarOpen(true);
         }}
       >
         <BsPlus size={30} />
