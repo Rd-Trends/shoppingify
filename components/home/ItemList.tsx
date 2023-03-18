@@ -18,8 +18,8 @@ const ItemList = () => {
       let itemsArr: item[] = [];
       items?.map((item) => {
         if (
-          item.category === category._id &&
-          item.name.toLowerCase().includes(itemQuery.toLowerCase())
+          item?.category === category?._id &&
+          item?.name.toLowerCase().includes(itemQuery.toLowerCase())
         )
           itemsArr.push(item);
       });

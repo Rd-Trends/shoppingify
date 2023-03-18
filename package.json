@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"tailwindcss -i ./styles/input.css -o ./styles/globals.css --watch\" ",
+    "dev":  "next dev",
     "build": "eslint . --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore && next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint . --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore"
+    "lint:fix": "eslint . --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "tailwind:watch": "tailwindcss -i ./styles/input.css -o ./styles/globals.css --watch"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",

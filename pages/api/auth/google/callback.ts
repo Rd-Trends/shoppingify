@@ -8,7 +8,7 @@ const handler = nextConnect();
 handler.use(init).get(
   passport.authenticate("google", {
     successRedirect: "/",
-    failureRedirect: "/auth/login",
+    failureRedirect: "/login",
   })
 );
 

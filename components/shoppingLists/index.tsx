@@ -17,7 +17,7 @@ const ShoppingList = ({
     return categories?.map((category) => {
       let itemsArr: shoppingListItem[] = [];
       shoppingList?.items.map((list) => {
-        if (list.item.category === category._id) itemsArr.push(list);
+        if (list?.item?.category === category?._id) itemsArr.push(list);
       });
       return {
         category: category,

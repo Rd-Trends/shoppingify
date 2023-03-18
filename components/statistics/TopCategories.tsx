@@ -16,9 +16,12 @@ const TopCategories = ({ shoppingLists }: props) => {
     let categoryCounter = new Map<string, number>();
     shoppingLists?.map((shoppingList) => {
       shoppingList.items.map((list) => {
-        categoryCounter.has(list.item.category)
-          ? categoryCounter.set(list.item.category, categoryCounter.get(list.item.category)! + 1)
-          : categoryCounter.set(list.item.category, 1);
+        categoryCounter.has(list.item?.category)
+          ? categoryCounter.set(
+              list.item?.category,
+              categoryCounter.get(list.item?.category)! + 1
+            )
+          : categoryCounter.set(list.item?.category, 1);
       });
     });
     const categories = Array.from(categoryCounter, ([id, quantity]) => ({
