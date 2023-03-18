@@ -1,6 +1,6 @@
-import { model, models, Schema, Types } from "mongoose";
+import mongoose, { model, models, Schema, Types } from "mongoose";
 
-import { shoppingListStatus } from "../interface";
+import { item, shoppingListStatus } from "../interface";
 
 interface ShoppingList {
   name: String;
@@ -40,6 +40,13 @@ const ShoppingListSchema = new Schema<ShoppingList>(
   },
   { timestamps: true }
 );
+
+ShoppingListSchema.pre("remove", function (next) {
+  const item = this;
+  mongoose
+    .model("Item") // @ts-ignore
+    .updateMany({ item: item._id }, { $pull: { item: item._id } });
+});
 
 const ShoppingList =
   models.ShoppingList ||

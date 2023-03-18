@@ -19,7 +19,7 @@ const ShoppingListItemList = ({ items, updateShoppingListItem }: props) => {
     return categories?.map((category) => {
       let itemsArr: shoppingListItem[] = [];
       items?.map((shoppingListItem) => {
-        if (shoppingListItem.item.category === category._id)
+        if (shoppingListItem.item?.category === category._id)
           itemsArr.push(shoppingListItem);
       });
       return {

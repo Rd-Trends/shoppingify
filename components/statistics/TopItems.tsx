@@ -15,9 +15,9 @@ const TopItems = ({ shoppingLists }: props) => {
     let itemCounter = new Map<string, number>();
     shoppingLists?.map((shoppingList) => {
       shoppingList.items.map((list) => {
-        itemCounter.has(list.item.name)
-          ? itemCounter.set(list.item.name, itemCounter.get(list.item.name)! + list.quantity)
-          : itemCounter.set(list.item.name, list.quantity);
+        itemCounter.has(list.item?.name)
+          ? itemCounter.set(list.item?.name, itemCounter.get(list.item?.name)! + list.quantity)
+          : itemCounter.set(list.item?.name, list.quantity);
       });
     });
     const items = Array.from(itemCounter, ([name, quantity]) => ({ name, quantity }))

@@ -1,4 +1,4 @@
-import { model, models, Schema, Types } from "mongoose";
+import mongoose, { model, models, Schema, Types } from "mongoose";
 
 interface Item {
   name: String;
@@ -27,6 +27,11 @@ const itemSchema = new Schema<Item>({
     select: false,
   },
 });
+
+// itemSchema.pre("deleteOne", function(next){
+//   const item = this
+//   mongoose.model("ShoppingList").deleteMany({})
+// })
 
 const Item = models.Item || model<Item>("Item", itemSchema);
 
