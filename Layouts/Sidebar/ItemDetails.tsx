@@ -39,7 +39,11 @@ const ItemDetails = () => {
         </button>
 
         {item?.image ? (
-          <img src={item.image} alt="" className=" w-full object-center object-cover aspect-square max-h-80 rounded-2xl " />
+          <img
+            src={item.image}
+            alt=""
+            className=" w-full object-center object-cover aspect-square max-h-80 rounded-2xl "
+          />
         ) : null}
 
         <div>
@@ -65,7 +69,7 @@ const ItemDetails = () => {
         ) : null}
       </div>
 
-      <div className="w-full flex items-center justify-center mt-8 md:mt-12 space-x-8">
+      <div className="w-full flex items-center justify-center my-12 md:my-16 space-x-8">
         <button className=" font-semibold hover:font-bold " onClick={deleItem}>
           delete
         </button>

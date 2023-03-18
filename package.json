@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"tailwindcss -i ./styles/input.css -o ./styles/globals.css --watch\" ",
+    "dev": "concurrently \"next dev\" \"npx tailwindcss -i ./styles/input.css -o ./styles/globals.css --watch\" ",
     "build": "eslint . --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore && next build",
     "start": "next start",
     "lint": "next lint",
