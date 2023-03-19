@@ -134,6 +134,7 @@ const CreateNewItem = () => {
                             key={category._id}
                             value={category._id}
                             className="py-3 px-4 rounded-md ui-active:bg-body_bg "
+                            onClick={() => setQuery("")}
                           >
                             {category.name}
                           </Combobox.Option>

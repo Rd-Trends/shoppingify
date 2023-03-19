@@ -1,7 +1,7 @@
 import { useAtom, useSetAtom } from "jotai";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { MdModeEdit } from "react-icons/md";
 import { motion } from "framer-motion";
 
@@ -16,8 +16,10 @@ import { SidebarAnimation } from "../../utils/variants";
 const CreateShoppingList = () => {
   const [shoppingList, setShoppingList] = useAtom(createShoppingListAtom);
   const router = useRouter();
+  const [isProcessing, setisProcessing] = useState(false);
 
   const createShoppingList = async () => {
+    setisProcessing(true);
     const res = await fetch("/api/shopping-lists", {
       method: "POST",
       body: JSON.stringify(shoppingList),
@@ -32,8 +34,9 @@ const CreateShoppingList = () => {
         items: [],
         status: shoppingListStatus.active,
       });
+      setisProcessing(false);
       router.push("/history");
-    }
+    } else setisProcessing(false);
   };
 
   const setSidebar = useSetAtom(sidebarAtom);
@@ -98,7 +101,7 @@ const CreateShoppingList = () => {
             type="text"
             className="py-3 outline-none border-none bg-transparent w-full px-4 disabled:text-[#C1C1C4] "
             placeholder="Enter a name"
-            disabled={Boolean(!shoppingList.items.length)}
+            disabled={Boolean(!shoppingList.items.length) || isProcessing}
             onChange={(e) =>
               setShoppingList((shoppingList) => {
                 return { ...shoppingList, name: e.target.value };
@@ -106,11 +109,15 @@ const CreateShoppingList = () => {
             }
           />
           <button
-            disabled={Boolean(!shoppingList.items.length)}
-            className="disabled:bg-[#C1C1C4] bg-yellow hover:opacity-70 py-3 transition-colors duration-300 rounded-xl px-6 text-white border-none outline-none"
+            disabled={Boolean(!shoppingList.items.length) || isProcessing}
+            className="disabled:bg-[#C1C1C4] bg-yellow hover:opacity-70 h-full w-[8rem] max-w-[40%] transition-colors duration-300 rounded-xl flex items-center justify-center text-white border-none outline-none"
             onClick={createShoppingList}
           >
-            save
+            {!isProcessing ? (
+              "save"
+            ) : (
+              <span className=" w-5 h-5 border-4 border-gray-200 border-b-transparent rounded-full animate-spin"></span>
+            )}
           </button>
         </div>
       </div>
