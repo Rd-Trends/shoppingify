@@ -4,7 +4,8 @@ import nextConnect from "next-connect";
 import { NextApiReq, shoppingListStatus } from "../../../interface";
 import auth from "../../../middleware/auth";
 import init from "../../../middleware/init";
-import ShoppingList from "../../../models/shoppingList";
+import Item from "../../../models/item";
+import ShoppingList from "../../../models/_shoppingList";
 
 const handler = nextConnect();
 
@@ -15,7 +16,7 @@ handler
     try {
       const userShoppingLists = await ShoppingList.find({
         owner: req.user._id,
-      }).populate("items.item");
+      }).populate("items.item", "", Item);
 
       return res.status(200).json(userShoppingLists);
     } catch (err) {

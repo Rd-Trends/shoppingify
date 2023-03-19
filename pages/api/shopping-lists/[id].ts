@@ -4,7 +4,8 @@ import nextConnect from "next-connect";
 import { item, NextApiReq, shoppingList } from "../../../interface";
 import auth from "../../../middleware/auth";
 import init from "../../../middleware/init";
-import ShoppingList from "../../../models/shoppingList";
+import Item from "../../../models/item";
+import ShoppingList from "../../../models/_shoppingList";
 
 const handler = nextConnect();
 
@@ -15,14 +16,16 @@ handler
     try {
       const { id } = req.query;
       const shoppingList = await ShoppingList.findById(id).populate(
-        "items.item"
+        "items.item",
+        "",
+        Item
       );
       if (!shoppingList) {
         return res.status(404).send("No shopping list with this ID was found");
       }
       return res.status(200).json(shoppingList);
     } catch (err) {
-      return res.status(500).send("an error occured");
+      throw err;
     }
   })
   .patch(async (req: NextApiReq, res: NextApiResponse, next) => {
@@ -51,10 +54,8 @@ handler
 
       return res.status(200).json(updatedShoppingList);
     } catch (err) {
-      console.log(err);
-      res.status(500).send("an error occured");
+      throw err;
     }
-    12;
   });
 
 export default handler;

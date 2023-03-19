@@ -4,7 +4,7 @@ import nextConnect from "next-connect";
 import { NextApiReq } from "../../../interface";
 import auth from "../../../middleware/auth";
 import init from "../../../middleware/init";
-import Item from "../../../models/item";
+import Item, { itemSchema } from "../../../models/item";
 
 const handler = nextConnect();
 
@@ -35,7 +35,7 @@ handler
 
       res.status(201).json(newItem);
     } catch (err) {
-      res.status(500).send("something happened");
+      throw err;
     }
   });
 

@@ -1,4 +1,5 @@
-import mongoose, { model, models, Schema, Types } from "mongoose";
+import { model, models, Schema, Types } from "mongoose";
+import ShoppingList from "./_shoppingList";
 
 interface Item {
   name: String;
@@ -8,7 +9,7 @@ interface Item {
   owner: Types.ObjectId;
 }
 
-const itemSchema = new Schema<Item>({
+export const itemSchema = new Schema<Item>({
   name: {
     type: String,
     required: [true, "please provide a name for this item"],
@@ -28,10 +29,17 @@ const itemSchema = new Schema<Item>({
   },
 });
 
-// itemSchema.pre("deleteOne", function(next){
-//   const item = this
-//   mongoose.model("ShoppingList").deleteMany({})
-// })
+itemSchema.pre("deleteOne", { document: true }, function (next) {
+  const item = this;
+  // @ts-ignore
+  ShoppingList.updateMany(
+    // @ts-ignore
+    { "items.item": item._id },
+    // @ts-ignore
+    { $pull: { items: { item: item._id } } },
+    next
+  );
+});
 
 const Item = models.Item || model<Item>("Item", itemSchema);
 
